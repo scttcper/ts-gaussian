@@ -11,7 +11,7 @@ ES5 Fork: https://github.com/tomgp/gaussian
 
 ### Creating a Distribution
 ```ts
-const Gaussian = require('ts-gaussian'); // or import * as Gaussian from 'ts-gaussian';
+import { Gaussian } from 'ts-gaussian';
 const distribution = new Gaussian(0, 1);
 // Take a random sample using inverse transform sampling method.
 const sample = distribution.ppf(Math.random());

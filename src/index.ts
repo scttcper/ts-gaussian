@@ -38,7 +38,7 @@ function ierfc(x: number) {
 }
 
 /** Models the normal distribution */
-export default class Gaussian {
+export class Gaussian {
   standardDeviation!: number;
 
   constructor(public mean: number, public variance: number) {
