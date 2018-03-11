@@ -4,17 +4,17 @@ A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribut
 (or Gaussian) distribution.
 
 ### Forked From
-Source: https://github.com/errcw/gaussian
-ES5 Fork: https://github.com/tomgp/gaussian
+Source: https://github.com/errcw/gaussian  
+ES5 Fork: https://github.com/tomgp/gaussian  
 
 ## API
 
 ### Creating a Distribution
-```javascript
-var gaussian = require('@tomgp/gaussian');
-var distribution = gaussian(mean, variance);
+```ts
+import Gaussian from '@ctrl/gaussian';
+const distribution = new Gaussian(0, 1);
 // Take a random sample using inverse transform sampling method.
-var sample = distribution.ppf(Math.random());
+const sample = distribution.ppf(Math.random());
 ```
 
 ### Properties
