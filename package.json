@@ -12,7 +12,7 @@
     "typescript"
   ],
   "main": "./bundles/gaussian.umd.js",
-  "module": "./bundles/gaussian.es5.js",
+  "module": "./bundles/gaussian.es2015.js",
   "typings": "./index.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
