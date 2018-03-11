@@ -29,9 +29,7 @@
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist/package-dist && semantic-release"
   },
-  "dependencies": {
-    "tslib": "^1.7.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
     "@commitlint/config-conventional": "^6.1.3",
