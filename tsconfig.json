@@ -16,6 +16,6 @@
     "outDir": "dist/package-dist"
   },
   "files": [
-    "./src/public_api"
+    "./src/index"
   ]
 }

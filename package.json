@@ -1,19 +1,19 @@
 {
-  "name": "gaussian",
+  "name": "ts-gaussian",
   "version": "0.0.0",
   "description": "",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/scttcper/ts-gaussian.git"
   },
   "keywords": [
     "typescript"
   ],
   "main": "./bundles/gaussian.umd.js",
   "module": "./bundles/gaussian.es5.js",
-  "typings": "./public_api.d.ts",
+  "typings": "./index.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts'",

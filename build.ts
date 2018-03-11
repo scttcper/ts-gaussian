@@ -5,7 +5,7 @@ import { rollup, InputOptions, OutputOptions } from 'rollup';
 import * as sourceMaps from 'rollup-plugin-sourcemaps';
 
 const umdInputOptions: InputOptions = {
-  input: `dist/umd/public_api.js`,
+  input: `dist/umd/index.js`,
   external: ['tslib'],
   plugins: [sourceMaps()],
 };
@@ -20,7 +20,7 @@ const umdOutputOptions: OutputOptions = {
 };
 const moduleInputOptions: InputOptions = {
   ...umdInputOptions,
-  input: `dist/esm5/public_api.js`,
+  input: `dist/esm5/index.js`,
 };
 const moduleOutputOptions: OutputOptions = {
   ...umdOutputOptions,
