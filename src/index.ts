@@ -1,5 +1,9 @@
-// Complementary error function
-// From Numerical Recipes in C 2e p221
+// hard forked from https://github.com/tomgp/gaussian
+
+/**
+ * Complementary error function
+ * From Numerical Recipes in C 2e p221
+ */
 function erfc(x: number) {
   const z = Math.abs(x);
   const t = 1 / (1 + z / 2);
@@ -11,10 +15,11 @@ function erfc(x: number) {
 
   return x >= 0 ? r : 2 - r;
 }
-
-// Inverse complementary error function
-// From Numerical Recipes 3e p265
-function ierfc(x: number) {
+/**
+ * Inverse complementary error function
+ * From Numerical Recipes 3e p265
+ */
+function ierfc(x: number): number {
   if (x >= 2) {
     return -100;
   }
@@ -36,8 +41,9 @@ function ierfc(x: number) {
 
   return x < 1 ? r : -r;
 }
-
-/** Models the normal distribution */
+/**
+ * Models the [Normal](http://en.wikipedia.org/wiki/Normal_distribution) (or Gaussian) distribution.
+ */
 export class Gaussian {
   standardDeviation!: number;
 
@@ -47,24 +53,34 @@ export class Gaussian {
     }
     this.standardDeviation = Math.sqrt(variance);
   }
-  /** Probability density function */
-  pdf(x: number) {
+  /**
+   * probability density function, which describes the probability
+   * of a random variable taking on the value _x_
+   */
+  pdf(x: number): number {
     const m = this.standardDeviation * Math.sqrt(2 * Math.PI);
     const e = Math.exp(-Math.pow(x - this.mean, 2) / (2 * this.variance));
     return e / m;
   }
-  /** Cumulative density function */
-  cdf(x: number) {
-    return (
-      0.5 * erfc(-(x - this.mean) / (this.standardDeviation * Math.sqrt(2)))
-    );
+  /**
+   * cumulative distribution function, which describes the probability of a
+   * random variable falling in the interval (−∞, _x_]
+   */
+  cdf(x: number): number {
+    return 0.5 * erfc(-(x - this.mean) / (this.standardDeviation * Math.sqrt(2)));
   }
-  /** Percent point function */
-  ppf(x: number) {
+  /**
+   * percent point function, the inverse of _cdf_
+   */
+  ppf(x: number): number {
     return this.mean - this.standardDeviation * Math.sqrt(2) * ierfc(2 * x);
   }
-  /** Product distribution of this and d (scale for constant) */
-  mul(d: number | Gaussian) {
+  /**
+   * Product distribution of this and d (scale for constant)
+   * @returns the product distribution of this and the given distribution;
+   * equivalent to `scale(d)` when d is a constant
+   */
+  mul(d: number | Gaussian): Gaussian {
     if (typeof d === 'number') {
       return this.scale(d);
     }
@@ -75,8 +91,11 @@ export class Gaussian {
       precision * this.mean + dprecision * d.mean,
     );
   }
-  /** Quotient distribution of this and d (scale for constant) */
-  div(d: number | Gaussian) {
+  /**
+   * Quotient distribution of this and d (scale for constant)
+   * @returns the quotient distribution of this and the given distribution; equivalent to `scale(1/d)` when d is a constant
+   */
+  div(d: number | Gaussian): Gaussian {
     if (typeof d === 'number') {
       return this.scale(1 / d);
     }
@@ -87,19 +106,28 @@ export class Gaussian {
       precision * this.mean - dprecision * d.mean,
     );
   }
-  /** Addition of this and d */
-  add(d: Gaussian) {
+  /**
+   * Addition of this and d
+   * @returns the result of adding this and the given distribution's means and variances
+   */
+  add(d: Gaussian): Gaussian {
     return new Gaussian(this.mean + d.mean, this.variance + d.variance);
   }
-  /** Subtraction of this and d */
-  sub(d: Gaussian) {
+  /**
+   * Subtraction of this and d
+   * @returns the result of subtracting this and the given distribution's means and variances
+   */
+  sub(d: Gaussian): Gaussian {
     return new Gaussian(this.mean - d.mean, this.variance + d.variance);
   }
-  /** Scale this by constant c */
-  scale(c: number) {
+  /**
+   * Scale this by constant c
+   * @returns the result of scaling this distribution by the given constant
+   */
+  scale(c: number): Gaussian {
     return new Gaussian(this.mean * c, this.variance * c * c);
   }
-  fromPrecisionMean(precision: number, precisionmean: number) {
+  fromPrecisionMean(precision: number, precisionmean: number): Gaussian {
     return new Gaussian(precisionmean / precision, 1 / precision);
   }
 }
