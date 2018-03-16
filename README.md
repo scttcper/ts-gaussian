@@ -12,6 +12,7 @@ Source: https://github.com/errcw/gaussian
 ES5 Fork: https://github.com/tomgp/gaussian  
 
 ## API
+Docs: https://scttcper.github.io/ts-gaussian/
 
 ### Creating a Distribution
 ```ts
