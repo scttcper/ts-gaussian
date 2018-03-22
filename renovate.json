@@ -2,8 +2,9 @@
   "extends": [
     "config:base"
   ],
-  "automerge": "minor",
+  "patch": {
+    "automerge": true
+  },
   "rebaseStalePrs": true,
-  "semanticCommits": true,
-  "pinVersions": false
+  "semanticCommits": true
 }
