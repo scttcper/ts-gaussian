@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scttcper/ts-gaussian.git"
+    "url": "https://github.com/scttcper/ts-gaussian.git"
   },
   "keywords": ["typescript", "gaussian", "normal", "distribution"],
   "main": "./bundles/gaussian.umd.js",
