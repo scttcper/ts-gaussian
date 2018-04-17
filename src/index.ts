@@ -1,4 +1,4 @@
-// hard forked from https://github.com/tomgp/gaussian
+// forked from https://github.com/tomgp/gaussian
 
 /**
  * Complementary error function

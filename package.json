@@ -1,16 +1,14 @@
 {
   "name": "ts-gaussian",
   "version": "0.0.0",
-  "description": "",
+  "description": "A TypeScript model of a Gaussian distribution",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scttcper/ts-gaussian.git"
+    "url": "git+https://github.com/scttcper/ts-gaussian.git"
   },
-  "keywords": [
-    "typescript"
-  ],
+  "keywords": ["typescript", "gaussian", "normal", "distribution"],
   "main": "./bundles/gaussian.umd.js",
   "module": "./bundles/gaussian.es2015.js",
   "typings": "./index.d.ts",
