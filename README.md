@@ -1,10 +1,6 @@
-# ts-gaussian
+# ts-gaussian [![npm](https://img.shields.io/npm/v/ts-gaussian.svg?maxAge=3600)](https://www.npmjs.com/package/ts-gaussian) [![build status](https://img.shields.io/travis/scttcper/ts-gaussian.svg)](https://travis-ci.org/scttcper/ts-gaussian) [![coverage status](https://codecov.io/gh/scttcper/ts-gaussian/branch/master/graph/badge.svg)](https://codecov.io/gh/scttcper/ts-gaussian)
 
-[![npm](https://img.shields.io/npm/v/ts-gaussian.svg?maxAge=3600)](https://www.npmjs.com/package/ts-gaussian)
-[![build status](https://img.shields.io/travis/scttcper/ts-gaussian.svg)](https://travis-ci.org/scttcper/ts-gaussian)
-[![coverage status](https://codecov.io/gh/scttcper/ts-gaussian/branch/master/graph/badge.svg)](https://codecov.io/gh/scttcper/ts-gaussian)
-
-A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribution)
+> A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribution)
 (or Gaussian) distribution.
 
 ### Forked From
