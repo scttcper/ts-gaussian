@@ -4,7 +4,7 @@
  * Complementary error function
  * From Numerical Recipes in C 2e p221
  */
-function erfc(x: number) {
+export function erfc(x: number) {
   const z = Math.abs(x);
   const t = 1 / (1 + z / 2);
   // prettier-ignore
@@ -19,7 +19,7 @@ function erfc(x: number) {
  * Inverse complementary error function
  * From Numerical Recipes 3e p265
  */
-function ierfc(x: number): number {
+export function ierfc(x: number): number {
   if (x >= 2) {
     return -100;
   }

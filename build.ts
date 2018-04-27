@@ -4,34 +4,19 @@ import { copySync } from 'fs-extra';
 import { rollup, OutputOptions, RollupFileOptions } from 'rollup';
 import * as sourceMaps from 'rollup-plugin-sourcemaps';
 
-const umdInputOptions: RollupFileOptions = {
-  input: `dist/umd/index.js`,
-  external: ['tslib'],
+const moduleInputOptions: RollupFileOptions = {
+  input: `dist/esm5/index.js`,
   plugins: [sourceMaps()],
 };
-const umdOutputOptions: OutputOptions = {
-  file: './dist/package-dist/bundles/gaussian.umd.js',
-  name: 'gaussian',
-  format: 'umd',
-  globals: {
-    tslib: 'tslib',
-  },
-  sourcemap: true,
-};
-const moduleInputOptions: RollupFileOptions = {
-  ...umdInputOptions,
-  input: `dist/esm5/index.js`,
-};
 const moduleOutputOptions: OutputOptions = {
-  ...umdOutputOptions,
   file: './dist/package-dist/bundles/gaussian.es2015.js',
   format: 'es',
+  name: 'gaussian',
+  sourcemap: true,
 };
 
 async function build() {
   // create bundles
-  const umd = await rollup(umdInputOptions);
-  await umd.write(umdOutputOptions);
   const mod = await rollup(moduleInputOptions);
   await mod.write(moduleOutputOptions);
 
