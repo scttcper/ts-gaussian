@@ -11,7 +11,6 @@ const moduleInputOptions: RollupFileOptions = {
 const moduleOutputOptions: OutputOptions = {
   file: './dist/package-dist/bundles/gaussian.es2015.js',
   format: 'es',
-  name: 'gaussian',
   sourcemap: true,
 };
 
