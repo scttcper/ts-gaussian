@@ -4,10 +4,7 @@
   "description": "A TypeScript model of a Gaussian distribution",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/scttcper/ts-gaussian.git"
-  },
+  "repository": "scttcper/ts-gaussian",
   "keywords": [
     "typescript",
     "gaussian",
@@ -29,56 +26,34 @@
     "test:watch": "jest --watch",
     "test:prod": "npm run test -- --coverage --no-cache",
     "commit": "git-cz",
-    "commitlint": "commitlint -e $GIT_PARAMS",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist/package-dist && semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "6.1.3",
-    "@commitlint/config-conventional": "6.1.3",
-    "@types/fs-extra": "5.0.2",
-    "@types/jest": "22.2.3",
-    "@types/node": "9.6.20",
-    "commitizen": "2.9.6",
+    "@types/fs-extra": "5.0.3",
+    "@types/jest": "23.0.2",
+    "@types/node": "10.3.2",
+    "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
-    "fs-extra": "5.0.0",
-    "husky": "0.15.0-rc.13",
-    "jest": "22.4.3",
-    "lint-staged": "7.0.5",
-    "prettier": "1.12.1",
+    "fs-extra": "6.0.1",
+    "jest": "23.1.0",
+    "lint-staged": "7.2.0",
     "rimraf": "2.6.2",
-    "rollup": "0.58.2",
+    "rollup": "0.60.2",
     "rollup-plugin-sourcemaps": "0.4.2",
-    "semantic-release": "15.1.11",
+    "semantic-release": "15.5.2",
     "travis-deploy-once": "5.0.0",
     "ts-jest": "22.4.6",
-    "ts-node": "6.0.5",
-    "tslint": "5.9.1",
-    "tslint-config-prettier": "1.12.0",
+    "ts-node": "6.1.1",
+    "tslint": "5.10.0",
+    "tslint-config-prettier": "1.13.0",
     "tslint-config-standard": "7.0.0",
     "typedoc": "0.11.1",
-    "typescript": "2.8.3"
+    "typescript": "2.9.1"
   },
   "release": {
     "branch": "master"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged",
-      "commit-msg": "npm run commitlint"
-    }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "config": {
     "commitizen": {
