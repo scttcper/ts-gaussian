@@ -21,7 +21,7 @@
     "lint-staged": "lint-staged",
     "prebuild": "rimraf dist",
     "build": "npm run build-es6; npm run build-cmjs; ts-node build",
-    "build-es6": "tsc -P ./tsconfig-build.json --outDir 'dist/es' --module es2015",
+    "build-es6": "tsc -P ./tsconfig-build.json --outDir 'dist/es' --module es2015 -d false --moduleResolution node",
     "build-cmjs": "tsc -P ./tsconfig-build.json",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",

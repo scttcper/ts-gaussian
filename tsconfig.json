@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "es2015",
+    "lib": ["es2017"],
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist",
@@ -11,8 +12,9 @@
     "strictPropertyInitialization": false,
     "noUnusedParameters": true
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"],
-  "exclude": ["node_modules"],
+  "files": [
+    "./src/index"
+  ],
 	"typedocOptions": {
 		"out": "docs",
 		"mode": "file",
