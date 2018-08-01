@@ -8,28 +8,26 @@
     "outDir": "./dist",
     "strict": true,
     "sourceMap": true,
+    "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "strictPropertyInitialization": false,
-    "noUnusedParameters": true
+    "strictPropertyInitialization": false
   },
-  "files": [
-    "./src/index"
-  ],
-	"typedocOptions": {
-		"out": "docs",
-		"mode": "file",
-		"target": "ES6",
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"exclude": "source/test",
-		"ignoreCompilerErrors": true,
-		"excludePrivate": true,
-		"excludeNotExported": true,
-		"stripInternal": true,
-		"suppressExcessPropertyErrors": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"theme": "minimal",
-		"hideGenerator": true,
-		"readme": "none"
-	}
+  "files": ["./src/index"],
+  "typedocOptions": {
+    "out": "docs",
+    "mode": "file",
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "exclude": "source/test",
+    "ignoreCompilerErrors": true,
+    "excludePrivate": true,
+    "excludeNotExported": true,
+    "stripInternal": true,
+    "suppressExcessPropertyErrors": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "theme": "minimal",
+    "hideGenerator": true,
+    "readme": "none"
+  }
 }
