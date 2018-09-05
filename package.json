@@ -28,7 +28,7 @@
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
     "presemantic-release": "cp package.json dist && cp LICENSE dist && cp README.md dist",
-    "semantic-release": "semantic-release dist"
+    "semantic-release": "cd dist && semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
