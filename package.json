@@ -12,25 +12,23 @@
     "distribution"
   ],
   "source": "src/index.ts",
-  "main": "./build/index.js",
-  "module": "./build/index.m.js",
-  "typings": "./build/index.d.ts",
+  "main": "./ts-gaussian.js",
+  "module": "./ts-gaussian.m.js",
+  "typings": "./index.d.ts",
   "sideEffects": false,
-  "files": [
-    "/build"
-  ],
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf build",
-    "build": "microbundle build --compress false --name=gaussian --format cjs,es --target node",
+    "build": "microbundle build --compress false --format cjs,es --target node -o dist",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:prod": "npm run test -- --coverage --no-cache",
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "prepublish": "cp package.json dist && cp LICENSE dist && cp README.md dist",
+    "semantic-release": "semantic-release dist"
   },
   "dependencies": {},
   "devDependencies": {
