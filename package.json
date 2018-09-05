@@ -19,7 +19,7 @@
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf build",
+    "prebuild": "rimraf dist",
     "build": "microbundle build --compress false --format cjs,es --target node -o dist",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",
