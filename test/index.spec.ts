@@ -1,6 +1,5 @@
 // Tests based on values from Wolfram Alpha.
-
-import { Gaussian } from '../src';
+import { Gaussian } from '../src/index';
 
 function epsilonEqual(actual: number, expected: number) {
   const diff = Math.abs(actual - expected);

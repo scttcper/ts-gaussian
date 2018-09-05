@@ -8,10 +8,8 @@
     "strict": true,
     "sourceMap": true,
     "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "strictPropertyInitialization": false
+    "noUnusedLocals": true
   },
-  "files": ["./src/index"],
   "typedocOptions": {
     "out": "docs",
     "entryPoint": "Gaussian",
@@ -28,5 +26,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "theme": "minimal",
     "hideGenerator": true
-  }
+  },
+  "include": [
+    "./src/**/*.ts"
+  ]
 }
