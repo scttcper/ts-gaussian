@@ -27,7 +27,7 @@
     "test:prod": "npm run test -- --coverage --no-cache",
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
-    "prepublish": "cp package.json dist && cp LICENSE dist && cp README.md dist",
+    "presemantic-release": "cp package.json dist && cp LICENSE dist && cp README.md dist",
     "semantic-release": "semantic-release dist"
   },
   "dependencies": {},
