@@ -17,7 +17,7 @@
   "typings": "./dist/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist/*"
+    "dist"
   ],
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
