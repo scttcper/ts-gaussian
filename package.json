@@ -12,17 +12,17 @@
     "distribution"
   ],
   "source": "src/index.ts",
-  "main": "./dist/index.js",
-  "module": "./dist/index.m.js",
-  "typings": "./dist/index.d.ts",
+  "main": "./build/index.js",
+  "module": "./build/index.m.js",
+  "typings": "./build/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist"
+    "/build"
   ],
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf build",
     "build": "microbundle build --compress false --name=gaussian --format cjs,es --target node",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",
