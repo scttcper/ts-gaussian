@@ -11,12 +11,8 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true
   },
-  "files": [
-    "./src/index.ts"
-  ],
   "typedocOptions": {
     "out": "docs",
-    "entryPoint": "Gaussian",
     "mode": "file",
     "target": "ES6",
     "module": "commonjs",

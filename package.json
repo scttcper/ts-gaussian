@@ -14,11 +14,11 @@
   "source": "src/index.ts",
   "main": "./ts-gaussian.js",
   "module": "./ts-gaussian.m.js",
-  "typings": "./index.d.ts",
+  "typings": "./src/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint -p tsconfig.json -t codeFrame",
+    "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix",
     "prebuild": "rimraf dist",
     "build": "microbundle build --compress false --format cjs,es --target node -o dist",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
@@ -27,27 +27,27 @@
     "test:prod": "npm run test -- --coverage --no-cache",
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
-    "presemantic-release": "cp package.json dist && cp LICENSE dist && cp README.md dist",
+    "presemantic-release": "cp package.json dist && cp LICENSE dist && cp README.md dist && rimraf dist/test",
     "semantic-release": "cd dist && semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "23.3.1",
-    "@types/node": "10.9.4",
-    "commitizen": "2.10.1",
+    "@types/jest": "23.3.5",
+    "@types/node": "10.11.7",
+    "commitizen": "3.0.2",
     "cz-conventional-changelog": "2.1.0",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "microbundle": "0.6.0",
     "rimraf": "2.6.2",
-    "semantic-release": "15.9.12",
-    "travis-deploy-once": "5.0.7",
-    "ts-jest": "23.1.4",
+    "semantic-release": "15.9.17",
+    "travis-deploy-once": "5.0.9",
+    "ts-jest": "23.10.4",
     "ts-node": "7.0.1",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.15.0",
-    "tslint-config-standard": "8.0.1",
-    "typedoc": "0.12.0",
-    "typescript": "3.0.3"
+    "tslint-xo": "0.9.0",
+    "typedoc": "0.13.0",
+    "typescript": "3.1.2"
   },
   "release": {
     "branch": "master"
@@ -58,23 +58,7 @@
     }
   },
   "jest": {
-    "testURL": "http://localhost",
-    "transform": {
-      ".ts": "ts-jest"
-    },
-    "testRegex": "(/test/.*|\\.(spec))\\.ts$",
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": -10
-      }
-    },
+    "preset": "ts-jest",
     "collectCoverage": true
   },
   "engines": {
