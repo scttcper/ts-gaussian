@@ -42,7 +42,7 @@
     "tslint-config-prettier": "1.17.0",
     "tslint-xo": "0.10.0",
     "typedoc": "0.13.0",
-    "typescript": "3.2.2"
+    "typescript": "3.2.4"
   },
   "release": {
     "branch": "master"
