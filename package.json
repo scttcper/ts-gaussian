@@ -34,7 +34,7 @@
     "@types/node": "10.12.19",
     "jest": "23.6.0",
     "microbundle": "0.8.4",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "semantic-release": "15.13.2",
     "ts-jest": "23.10.5",
     "ts-node": "7.0.1",
