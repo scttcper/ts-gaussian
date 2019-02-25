@@ -15,6 +15,7 @@ export function erfc(x: number) {
 
   return x >= 0 ? r : 2 - r;
 }
+
 /**
  * Inverse complementary error function
  * From Numerical Recipes 3e p265
@@ -23,6 +24,7 @@ export function ierfc(x: number): number {
   if (x >= 2) {
     return -100;
   }
+
   if (x <= 0) {
     return 100;
   }
@@ -41,6 +43,7 @@ export function ierfc(x: number): number {
 
   return x < 1 ? r : -r;
 }
+
 /**
  * Models the [Normal](http://en.wikipedia.org/wiki/Normal_distribution) (or Gaussian) distribution.
  */
@@ -51,8 +54,10 @@ export class Gaussian {
     if (variance <= 0) {
       throw new Error(`Variance must be > 0 (but was ${variance})`);
     }
+
     this.standardDeviation = Math.sqrt(variance);
   }
+
   /**
    * probability density function, which describes the probability
    * of a random variable taking on the value _x_
@@ -62,6 +67,7 @@ export class Gaussian {
     const e = Math.exp(-Math.pow(x - this.mean, 2) / (2 * this.variance));
     return e / m;
   }
+
   /**
    * cumulative distribution function, which describes the probability of a
    * random variable falling in the interval (−∞, _x_]
@@ -69,12 +75,14 @@ export class Gaussian {
   cdf(x: number): number {
     return 0.5 * erfc(-(x - this.mean) / (this.standardDeviation * Math.sqrt(2)));
   }
+
   /**
    * percent point function, the inverse of _cdf_
    */
   ppf(x: number): number {
     return this.mean - this.standardDeviation * Math.sqrt(2) * ierfc(2 * x);
   }
+
   /**
    * Product distribution of this and d (scale for constant)
    * @returns the product distribution of this and the given distribution;
@@ -84,6 +92,7 @@ export class Gaussian {
     if (typeof d === 'number') {
       return this.scale(d);
     }
+
     const precision = 1 / this.variance;
     const dprecision = 1 / d.variance;
     return this.fromPrecisionMean(
@@ -91,6 +100,7 @@ export class Gaussian {
       precision * this.mean + dprecision * d.mean,
     );
   }
+
   /**
    * Quotient distribution of this and d (scale for constant)
    * @returns the quotient distribution of this and the given distribution; equivalent to `scale(1/d)` when d is a constant
@@ -99,13 +109,15 @@ export class Gaussian {
     if (typeof d === 'number') {
       return this.scale(1 / d);
     }
+
     const precision = 1 / this.variance;
     const dprecision = 1 / d.variance;
     return this.fromPrecisionMean(
       precision - dprecision,
-      precision * this.mean - dprecision * d.mean,
+      (precision * this.mean) - (dprecision * d.mean),
     );
   }
+
   /**
    * Addition of this and d
    * @returns the result of adding this and the given distribution's means and variances
@@ -113,6 +125,7 @@ export class Gaussian {
   add(d: Gaussian): Gaussian {
     return new Gaussian(this.mean + d.mean, this.variance + d.variance);
   }
+
   /**
    * Subtraction of this and d
    * @returns the result of subtracting this and the given distribution's means and variances
@@ -120,6 +133,7 @@ export class Gaussian {
   sub(d: Gaussian): Gaussian {
     return new Gaussian(this.mean - d.mean, this.variance + d.variance);
   }
+
   /**
    * Scale this by constant c
    * @returns the result of scaling this distribution by the given constant
@@ -127,6 +141,7 @@ export class Gaussian {
   scale(c: number): Gaussian {
     return new Gaussian(this.mean * c, this.variance * c * c);
   }
+
   fromPrecisionMean(precision: number, precisionmean: number): Gaussian {
     return new Gaussian(precisionmean / precision, 1 / precision);
   }
