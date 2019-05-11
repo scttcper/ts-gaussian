@@ -27,7 +27,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "npm run test -- --coverage --no-cache",
-    "semantic-release": "cd dist && semantic-release"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {},
   "devDependencies": {
