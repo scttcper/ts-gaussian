@@ -33,3 +33,4 @@ build
 docs
 dist
 .rpt2_cache
+yarn.lock
