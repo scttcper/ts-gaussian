@@ -5,6 +5,7 @@
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
   "repository": "scttcper/ts-gaussian",
+  "homepage": "https://ts-gaussian.netlify.com",
   "keywords": [
     "typescript",
     "gaussian",
@@ -52,6 +53,6 @@
     "branch": "master"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   }
 }
