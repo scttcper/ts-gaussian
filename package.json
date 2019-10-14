@@ -20,8 +20,8 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "lint": "eslint src/**/*.ts test/**/*.ts",
-    "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts",
+    "lint": "eslint --ext .ts,.js .",
+    "lint:fix": "eslint --ext .ts,.js --fix .",
     "prepare": "npm run build",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.module.json",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
@@ -33,19 +33,19 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "24.0.18",
-    "@types/node": "12.7.8",
-    "@typescript-eslint/eslint-plugin": "2.0.0",
-    "@typescript-eslint/parser": "2.0.0",
-    "eslint": "6.2.2",
+    "@types/node": "12.7.12",
+    "@typescript-eslint/eslint-plugin": "2.3.3",
+    "@typescript-eslint/parser": "2.3.3",
+    "eslint": "6.5.1",
     "eslint-config-xo-space": "0.21.0",
-    "eslint-config-xo-typescript": "0.17.0",
+    "eslint-config-xo-typescript": "0.19.0",
     "eslint-plugin-import": "2.18.2",
     "jest": "24.9.0",
     "rimraf": "3.0.0",
     "semantic-release": "15.13.24",
-    "ts-jest": "24.0.2",
+    "ts-jest": "24.1.0",
     "typedoc": "0.15.0",
-    "typescript": "3.5.3"
+    "typescript": "3.6.4"
   },
   "release": {
     "branch": "master"
