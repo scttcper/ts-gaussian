@@ -44,7 +44,7 @@
     "rimraf": "3.0.0",
     "semantic-release": "15.13.31",
     "ts-jest": "24.1.0",
-    "typedoc": "0.15.0",
+    "typedoc": "0.15.3",
     "typescript": "3.6.4"
   },
   "release": {
