@@ -1,12 +1,12 @@
 // Tests based on values from Wolfram Alpha.
 import { Gaussian } from '../src/index';
 
-function epsilonEqual(actual: number, expected: number) {
+function epsilonEqual(actual: number, expected: number): void {
   const diff = Math.abs(actual - expected);
   expect(diff < 1e-5).toBeTruthy();
 }
 
-function gaussianEqual(actual: Gaussian, expected: Gaussian) {
+function gaussianEqual(actual: Gaussian, expected: Gaussian): void {
   expect(actual.mean).toEqual(expected.mean);
   expect(actual.variance).toEqual(expected.variance);
 }

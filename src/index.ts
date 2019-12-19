@@ -4,7 +4,7 @@
  * Complementary error function
  * From Numerical Recipes in C 2e p221
  */
-export function erfc(x: number) {
+export function erfc(x: number): number {
   const z = Math.abs(x);
   const t = 1 / (1 + z / 2);
   // prettier-ignore
