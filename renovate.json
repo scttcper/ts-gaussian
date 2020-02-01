@@ -3,9 +3,7 @@
     "config:js-lib",
     "schedule:monthly"
   ],
-  "patch": {
-    "automerge": true
-  },
-  "rebaseStalePrs": true,
-  "semanticCommits": true
+  "automerge": "minor",
+  "semanticCommits": true,
+  "pinVersions": false
 }
