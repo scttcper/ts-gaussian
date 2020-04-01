@@ -64,7 +64,7 @@ export class Gaussian {
    */
   pdf(x: number): number {
     const m = this.standardDeviation * Math.sqrt(2 * Math.PI);
-    const e = Math.exp(-Math.pow(x - this.mean, 2) / (2 * this.variance));
+    const e = Math.exp(-((x - this.mean) ** 2) / (2 * this.variance));
     return e / m;
   }
 
@@ -114,7 +114,7 @@ export class Gaussian {
     const dprecision = 1 / d.variance;
     return this.fromPrecisionMean(
       precision - dprecision,
-      (precision * this.mean) - (dprecision * d.mean),
+      precision * this.mean - dprecision * d.mean,
     );
   }
 
