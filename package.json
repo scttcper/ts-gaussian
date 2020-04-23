@@ -23,8 +23,8 @@
     "lint": "eslint --ext .ts,.js .",
     "lint:fix": "eslint --ext .ts,.js --fix .",
     "prepare": "npm run build",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.module.json",
-    "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
+    "build": "del-cli dist && tsc -p tsconfig.build.json && tsc -p tsconfig.module.json",
+    "build:docs": "typedoc --out docs --hideGenerator --target ES6 --mode file src && touch docs/.nojekyll",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "npm run test -- --coverage --no-cache",
@@ -32,19 +32,19 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "25.1.4",
-    "@types/node": "13.9.8",
-    "@typescript-eslint/eslint-plugin": "2.26.0",
-    "@typescript-eslint/parser": "2.26.0",
+    "@types/jest": "25.2.1",
+    "@types/node": "13.13.2",
+    "@typescript-eslint/eslint-plugin": "2.29.0",
+    "@typescript-eslint/parser": "2.29.0",
+    "del-cli": "3.0.0",
     "eslint": "6.8.0",
     "eslint-config-xo-space": "0.24.0",
     "eslint-config-xo-typescript": "0.27.0",
     "eslint-plugin-import": "2.20.2",
-    "jest": "25.2.4",
-    "rimraf": "3.0.2",
-    "semantic-release": "17.0.4",
-    "ts-jest": "25.3.0",
-    "typedoc": "0.17.3",
+    "jest": "25.4.0",
+    "semantic-release": "17.0.7",
+    "ts-jest": "25.4.0",
+    "typedoc": "0.17.4",
     "typescript": "3.8.3"
   },
   "jest": {
@@ -55,6 +55,6 @@
     "branch": "master"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   }
 }
