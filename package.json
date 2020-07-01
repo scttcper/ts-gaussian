@@ -33,7 +33,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "25.2.3",
-    "@types/node": "13.13.9",
+    "@types/node": "13.13.12",
     "@typescript-eslint/eslint-plugin": "2.30.0",
     "@typescript-eslint/parser": "2.30.0",
     "del-cli": "3.0.0",
