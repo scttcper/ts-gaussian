@@ -38,6 +38,7 @@ export function ierfc(x: number): number {
 
   for (let j = 0; j < 2; j++) {
     const err = erfc(r) - xx;
+    // eslint-disable-next-line no-loss-of-precision
     r += err / (1.12837916709551257 * Math.exp(-(r * r)) - r * err);
   }
 

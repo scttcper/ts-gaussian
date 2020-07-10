@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": ["@ctrl/eslint-config"],
+  "rules": {
+    "no-mixed-operators": 0
+  }
+}

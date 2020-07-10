@@ -3,7 +3,7 @@
 > A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribution)
 (or Gaussian) distribution.
 
-__API Docs__: https://ts-gaussian.netlify.app  
+__API Docs__: https://ts-gaussian.vercel.app  
 
 ## Creating a Distribution
 

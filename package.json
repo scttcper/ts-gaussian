@@ -5,16 +5,16 @@
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
   "repository": "scttcper/ts-gaussian",
-  "homepage": "https://ts-gaussian.netlify.com",
+  "homepage": "https://ts-gaussian.vercel.app",
   "keywords": [
     "typescript",
     "gaussian",
     "normal",
     "distribution"
   ],
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "module": "./dist/module/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/module/index.js",
   "files": [
     "dist"
   ],
@@ -32,20 +32,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "25.2.3",
-    "@types/node": "13.13.12",
-    "@typescript-eslint/eslint-plugin": "2.30.0",
-    "@typescript-eslint/parser": "2.30.0",
+    "@ctrl/eslint-config": "1.0.3",
+    "@jest/globals": "26.1.0",
+    "@types/node": "14.0.22",
     "del-cli": "3.0.1",
-    "eslint": "6.8.0",
-    "eslint-config-xo-space": "0.25.0",
-    "eslint-config-xo-typescript": "0.28.0",
-    "eslint-plugin-import": "2.22.0",
-    "jest": "25.5.4",
-    "semantic-release": "17.0.7",
-    "ts-jest": "25.4.0",
-    "typedoc": "0.17.6",
-    "typescript": "3.8.3"
+    "jest": "26.1.0",
+    "ts-jest": "26.1.1",
+    "typedoc": "0.17.8",
+    "typescript": "3.9.6"
   },
   "jest": {
     "preset": "ts-jest",

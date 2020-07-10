@@ -1,4 +1,6 @@
 // Tests based on values from Wolfram Alpha.
+import { expect, describe, it } from '@jest/globals';
+
 import { Gaussian } from '../src/index';
 
 function epsilonEqual(actual: number, expected: number): void {
