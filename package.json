@@ -32,7 +32,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@ctrl/eslint-config": "1.0.3",
+    "@ctrl/eslint-config": "1.0.4",
     "@jest/globals": "26.1.0",
     "@types/node": "14.0.23",
     "del-cli": "3.0.1",
