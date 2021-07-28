@@ -1,7 +1,7 @@
 // Tests based on values from Wolfram Alpha.
-import { expect, describe, it } from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 
-import { Gaussian } from '../src/index';
+import { Gaussian } from '../src';
 
 function epsilonEqual(actual: number, expected: number): void {
   const diff = Math.abs(actual - expected);
@@ -84,5 +84,20 @@ describe('Gaussian', () => {
   it('should rejects non-positive variances', () => {
     expect(() => new Gaussian(0, 0)).toThrowError();
     expect(() => new Gaussian(0, -1)).toThrowError();
+  });
+
+  it('ceils ppf >= 1', () => {
+    const normal = new Gaussian(0, 1);
+    expect(normal.ppf(1)).toBe(141.4213562373095);
+    expect(normal.ppf(1.1)).toBe(141.4213562373095);
+    expect(normal.ppf(100)).toBe(141.4213562373095);
+  });
+
+  it('ceils ppf <= 0', () => {
+    const normal = new Gaussian(0, 1);
+    expect(normal.ppf(0)).toBe(-141.4213562373095);
+    expect(normal.ppf(-0)).toBe(-141.4213562373095);
+    expect(normal.ppf(-0.1)).toBe(-141.4213562373095);
+    expect(normal.ppf(-1)).toBe(-141.4213562373095);
   });
 });

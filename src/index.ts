@@ -49,7 +49,7 @@ export function ierfc(x: number): number {
  * Models the [Normal](http://en.wikipedia.org/wiki/Normal_distribution) (or Gaussian) distribution.
  */
 export class Gaussian {
-  standardDeviation!: number;
+  readonly standardDeviation: number;
 
   constructor(public mean: number, public variance: number) {
     if (variance <= 0) {
