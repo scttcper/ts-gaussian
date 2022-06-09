@@ -25,34 +25,21 @@
     "prepare": "npm run build",
     "build": "tsc",
     "build:docs": "typedoc",
-    "test": "ava",
-    "test:watch": "ava --watch",
-    "test:ci": "c8 --reporter=text --reporter=lcov ava"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ci": "vitest run --coverage --reporter=default --reporter=junit --outputFile=./junit.xml"
   },
   "devDependencies": {
-    "@ctrl/eslint-config": "3.3.1",
-    "@jest/globals": "27.4.6",
-    "@sindresorhus/tsconfig": "2.0.0",
-    "@types/node": "17.0.9",
-    "ava": "4.0.1",
-    "c8": "7.11.0",
-    "typedoc": "0.22.11",
-    "ts-node": "10.4.0",
-    "typescript": "4.5.4"
-  },
-  "ava": {
-    "files": [
-      "test/**/*.spec.ts"
-    ],
-    "extensions": {
-      "ts": "module"
-    },
-    "nodeArguments": [
-      "--loader=ts-node/esm"
-    ]
+    "@ctrl/eslint-config": "3.4.5",
+    "@sindresorhus/tsconfig": "3.0.1",
+    "@types/node": "17.0.41",
+    "c8": "7.11.3",
+    "typedoc": "0.22.17",
+    "typescript": "4.7.3",
+    "vitest": "0.14.1"
   },
   "release": {
-    "branch": "master"
+    "branches": ["master"]
   },
   "engines": {
     "node": ">=14.16"

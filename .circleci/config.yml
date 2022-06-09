@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
-  node: circleci/node@4
-  codecov: codecov/codecov@1
+  node: circleci/node@5
+  codecov: codecov/codecov@3
 jobs:
   test:
     executor:
@@ -13,11 +13,8 @@ jobs:
       - run:
           name: test
           command: npm run test:ci
-          environment:
-            JEST_JUNIT_OUTPUT_DIR: "./reports"
-            JEST_JUNIT_OUTPUT_NAME: "test-results.xml"
       - store_test_results:
-          path: ./reports
+          path: ./junit.xml
       - run:
           name: lint
           command: npm run lint
