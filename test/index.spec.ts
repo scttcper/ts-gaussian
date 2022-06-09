@@ -1,5 +1,5 @@
 // Tests based on values from Wolfram Alpha.
-import { describe, expect, it } from 'vitest';
+import { expect, it } from 'vitest';
 
 import { Gaussian } from '../src/index.js';
 
