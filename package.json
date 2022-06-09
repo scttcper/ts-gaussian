@@ -25,9 +25,9 @@
     "prepare": "npm run build",
     "build": "tsc",
     "build:docs": "typedoc",
-    "test": "ava",
-    "test:watch": "ava --watch",
-    "test:ci": "c8 --reporter=text --reporter=lcov ava"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ci": "vitest run --coverage --reporter=default --reporter=junit --outputFile=./junit.xml"
   },
   "devDependencies": {
     "@ctrl/eslint-config": "3.4.5",
