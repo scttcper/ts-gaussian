@@ -38,7 +38,7 @@ export function ierfc(x: number): number {
 
   for (let j = 0; j < 2; j++) {
     const err = erfc(r) - xx;
-    // eslint-disable-next-line @typescript-eslint/no-loss-of-precision
+    // oxlint-disable-next-line no-loss-of-precision
     r += err / (1.12837916709551257 * Math.exp(-(r * r)) - r * err);
   }
 
@@ -49,9 +49,14 @@ export function ierfc(x: number): number {
  * Models the [Normal](http://en.wikipedia.org/wiki/Normal_distribution) (or Gaussian) distribution.
  */
 export class Gaussian {
+  public mean: number;
+  public variance: number;
   readonly standardDeviation: number;
 
-  constructor(public mean: number, public variance: number) {
+  constructor(mean: number, variance: number) {
+    this.mean = mean;
+    this.variance = variance;
+
     if (variance <= 0) {
       throw new Error(`Variance must be > 0 (but was ${variance})`);
     }

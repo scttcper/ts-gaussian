@@ -26,7 +26,9 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-.vscode
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
 
 # build
 build
@@ -35,3 +37,4 @@ dist
 .rpt2_cache
 yarn.lock
 junit.xml
+.DS_Store
