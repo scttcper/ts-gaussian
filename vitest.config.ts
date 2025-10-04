@@ -2,10 +2,9 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    threads: false,
     coverage: {
       reporter: ['text', 'json', 'html'],
-      provider: 'c8',
+      provider: 'v8',
     },
   },
 });
