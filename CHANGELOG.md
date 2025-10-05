@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>4.0.2 (2025-10-05)</small>
+
+* fix: spelling mistakes ([781a22e](https://github.com/scttcper/ts-gaussian/commit/781a22e))
+
 ## <small>4.0.1 (2025-10-05)</small>
 
 * fix: repo link ([cc0cec4](https://github.com/scttcper/ts-gaussian/commit/cc0cec4))
