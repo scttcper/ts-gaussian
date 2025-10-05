@@ -1,6 +1,6 @@
 {
   "name": "ts-gaussian",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A TypeScript model of a Gaussian distribution",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
