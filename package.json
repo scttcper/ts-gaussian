@@ -4,7 +4,10 @@
   "description": "A TypeScript model of a Gaussian distribution",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
-  "repository": "scttcper/ts-gaussian",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scttcper/ts-gaussian.git"
+  },
   "homepage": "https://ts-gaussian.vercel.app",
   "keywords": [
     "typescript",
