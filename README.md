@@ -10,7 +10,7 @@
 ```ts
 import { Gaussian } from 'ts-gaussian';
 const distribution = new Gaussian(0, 1);
-// Take a random sample using inverse transform sampling method.
+// Take a random sample using the inverse transform sampling method.
 const sample = distribution.ppf(Math.random());
 // 0.5071973169873031 or something similar
 ```
@@ -30,10 +30,10 @@ const sample = distribution.ppf(Math.random());
 
 ## Combination Functions
 
-- `mul(d)`: returns the product distribution of this and the given distribution; equivalent to `scale(d)` when d is a constant
-- `div(d)`: returns the quotient distribution of this and the given distribution; equivalent to `scale(1/d)` when d is a constant
-- `add(d)`: returns the result of adding this and the given distribution's means and variances
-- `sub(d)`: returns the result of subtracting this and the given distribution's means and variances
+- `mul(d)`: returns the product distribution of this and the given distribution; equivalent to `scale(d)` when `d` is a constant
+- `div(d)`: returns the quotient distribution of this and the given distribution; equivalent to `scale(1/d)` when `d` is a constant
+- `add(d)`: returns the sum of the means and variances of this distribution and the given distribution
+- `sub(d)`: returns the difference of the means and variances of this distribution and the given distribution
 - `scale(c)`: returns the result of scaling this distribution by the given constant
 
 ## See Also
