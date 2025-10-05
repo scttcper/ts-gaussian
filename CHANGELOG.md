@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>4.0.3 (2025-10-05)</small>
+
+* fix: use older action ([a10cb16](https://github.com/scttcper/ts-gaussian/commit/a10cb16))
+
 ## <small>4.0.2 (2025-10-05)</small>
 
 * fix: spelling mistakes ([781a22e](https://github.com/scttcper/ts-gaussian/commit/781a22e))
