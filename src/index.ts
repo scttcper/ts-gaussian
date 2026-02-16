@@ -101,9 +101,10 @@ export class Gaussian {
 
     const precision = 1 / this.variance;
     const dprecision = 1 / d.variance;
-    return this.fromPrecisionMean(
-      precision + dprecision,
-      precision * this.mean + dprecision * d.mean,
+    const totalPrecision = precision + dprecision;
+    return new Gaussian(
+      (precision * this.mean + dprecision * d.mean) / totalPrecision,
+      1 / totalPrecision,
     );
   }
 
@@ -118,9 +119,10 @@ export class Gaussian {
 
     const precision = 1 / this.variance;
     const dprecision = 1 / d.variance;
-    return this.fromPrecisionMean(
-      precision - dprecision,
-      precision * this.mean - dprecision * d.mean,
+    const totalPrecision = precision - dprecision;
+    return new Gaussian(
+      (precision * this.mean - dprecision * d.mean) / totalPrecision,
+      1 / totalPrecision,
     );
   }
 
@@ -146,9 +148,5 @@ export class Gaussian {
    */
   scale(c: number): Gaussian {
     return new Gaussian(this.mean * c, this.variance * c * c);
-  }
-
-  fromPrecisionMean(precision: number, precisionmean: number): Gaussian {
-    return new Gaussian(precisionmean / precision, 1 / precision);
   }
 }
