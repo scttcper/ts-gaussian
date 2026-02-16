@@ -27,29 +27,29 @@ it('should have default properties', () => {
 
 it('should compute pdf', () => {
   const d = new Gaussian(0, 1);
-  epsilonEqual(d.pdf(-2), 0.053991);
-  epsilonEqual(d.pdf(-1), 0.241971);
-  epsilonEqual(d.pdf(0), 0.398942);
-  epsilonEqual(d.pdf(1), 0.241971);
-  epsilonEqual(d.pdf(2), 0.053991);
+  epsilonEqual(d.pdf(-2), 0.053_991);
+  epsilonEqual(d.pdf(-1), 0.241_971);
+  epsilonEqual(d.pdf(0), 0.398_942);
+  epsilonEqual(d.pdf(1), 0.241_971);
+  epsilonEqual(d.pdf(2), 0.053_991);
 });
 
 it('should compute cdf', () => {
   const d = new Gaussian(0, 1);
-  epsilonEqual(d.cdf(-1.28155), 0.1);
-  epsilonEqual(d.cdf(-0.67449), 0.25);
+  epsilonEqual(d.cdf(-1.281_55), 0.1);
+  epsilonEqual(d.cdf(-0.674_49), 0.25);
   epsilonEqual(d.cdf(0), 0.5);
-  epsilonEqual(d.cdf(0.67449), 0.75);
-  epsilonEqual(d.cdf(1.28155), 0.9);
+  epsilonEqual(d.cdf(0.674_49), 0.75);
+  epsilonEqual(d.cdf(1.281_55), 0.9);
 });
 
 it('should compute ppf', () => {
   const d = new Gaussian(0, 1);
-  epsilonEqual(d.ppf(0.1), -1.28155);
-  epsilonEqual(d.ppf(0.25), -0.67449);
+  epsilonEqual(d.ppf(0.1), -1.281_55);
+  epsilonEqual(d.ppf(0.25), -0.674_49);
   epsilonEqual(d.ppf(0.5), 0);
-  epsilonEqual(d.ppf(0.75), 0.67449);
-  epsilonEqual(d.ppf(0.9), 1.28155);
+  epsilonEqual(d.ppf(0.75), 0.674_49);
+  epsilonEqual(d.ppf(0.9), 1.281_55);
 });
 
 it('should compute mul', () => {
@@ -87,15 +87,15 @@ it('should rejects non-positive variances', () => {
 
 it('ceils ppf >= 1', () => {
   const normal = new Gaussian(0, 1);
-  expect(normal.ppf(1)).toBe(141.4213562373095);
-  expect(normal.ppf(1.1)).toBe(141.4213562373095);
-  expect(normal.ppf(100)).toBe(141.4213562373095);
+  expect(normal.ppf(1)).toBe(141.421_356_237_309_5);
+  expect(normal.ppf(1.1)).toBe(141.421_356_237_309_5);
+  expect(normal.ppf(100)).toBe(141.421_356_237_309_5);
 });
 
 it('ceils ppf <= 0', () => {
   const normal = new Gaussian(0, 1);
-  expect(normal.ppf(0)).toBe(-141.4213562373095);
-  expect(normal.ppf(-0)).toBe(-141.4213562373095);
-  expect(normal.ppf(-0.1)).toBe(-141.4213562373095);
-  expect(normal.ppf(-1)).toBe(-141.4213562373095);
+  expect(normal.ppf(0)).toBe(-141.421_356_237_309_5);
+  expect(normal.ppf(-0)).toBe(-141.421_356_237_309_5);
+  expect(normal.ppf(-0.1)).toBe(-141.421_356_237_309_5);
+  expect(normal.ppf(-1)).toBe(-141.421_356_237_309_5);
 });

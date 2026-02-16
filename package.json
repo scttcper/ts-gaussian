@@ -2,57 +2,48 @@
   "name": "ts-gaussian",
   "version": "4.0.3",
   "description": "A TypeScript model of a Gaussian distribution",
-  "author": "Scott Cooper <scttcper@gmail.com>",
+  "keywords": [
+    "distribution",
+    "gaussian",
+    "normal",
+    "typescript"
+  ],
+  "homepage": "https://ts-gaussian.vercel.app",
   "license": "MIT",
+  "author": "Scott Cooper <scttcper@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scttcper/ts-gaussian.git"
   },
-  "homepage": "https://ts-gaussian.vercel.app",
-  "keywords": [
-    "typescript",
-    "gaussian",
-    "normal",
-    "distribution"
-  ],
-  "type": "module",
-  "exports": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
   "files": [
     "dist/src"
   ],
+  "type": "module",
   "sideEffects": false,
+  "types": "./dist/src/index.d.ts",
+  "exports": "./dist/src/index.js",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
-    "lint": "oxlint . && prettier --check . --experimental-cli",
-    "lint:fix": "oxlint . --fix && prettier --write . --log-level=error --experimental-cli",
+    "lint": "oxlint . && oxfmt . --check",
+    "lint:fix": "oxlint . --fix && oxfmt . --write",
     "prepare": "npm run build",
     "build": "tsc",
     "build:docs": "typedoc",
     "test": "vitest run",
-    "test:watch": "vitest",
-    "test:ci": "vitest run --coverage --reporter=default --reporter=junit --outputFile=./junit.xml"
+    "test:watch": "vitest"
   },
   "devDependencies": {
-    "@ctrl/oxlint-config": "1.2.6",
-    "@sindresorhus/tsconfig": "8.0.1",
-    "@types/node": "24.6.2",
-    "@vitest/coverage-v8": "3.2.4",
-    "oxlint": "1.19.0",
-    "prettier": "3.6.2",
-    "typedoc": "0.28.13",
+    "@ctrl/oxlint-config": "1.4.0",
+    "@sindresorhus/tsconfig": "8.1.0",
+    "@types/node": "25.2.3",
+    "oxfmt": "0.33.0",
+    "oxlint": "1.48.0",
+    "typedoc": "0.28.17",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "arrowParens": "avoid",
-    "semi": true,
-    "printWidth": 100
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "vitest": "4.0.18"
   },
   "release": {
     "branches": [

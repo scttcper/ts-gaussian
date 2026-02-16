@@ -8,10 +8,10 @@ export function erfc(x: number): number {
   const z = Math.abs(x);
   const t = 1 / (1 + z / 2);
   // prettier-ignore
-  const r = t * Math.exp(-z * z - 1.26551223 + t * (1.00002368 +
-          t * (0.37409196 + t * (0.09678418 + t * (-0.18628806 +
-          t * (0.27886807 + t * (-1.13520398 + t * (1.48851587 +
-          t * (-0.82215223 + t * 0.17087277)))))))));
+  const r = t * Math.exp(-z * z - 1.265_512_23 + t * (1.000_023_68 +
+          t * (0.374_091_96 + t * (0.096_784_18 + t * (-0.186_288_06 +
+          t * (0.278_868_07 + t * (-1.135_203_98 + t * (1.488_515_87 +
+          t * (-0.822_152_23 + t * 0.170_872_77)))))))));
 
   return x >= 0 ? r : 2 - r;
 }
@@ -33,13 +33,13 @@ export function ierfc(x: number): number {
   const t = Math.sqrt(-2 * Math.log(xx / 2));
 
   // prettier-ignore
-  let r = -0.70711 * ((2.30753 + t * 0.27061) /
-          (1 + t * (0.99229 + t * 0.04481)) - t);
+  let r = -0.707_11 * ((2.307_53 + t * 0.270_61) /
+          (1 + t * (0.992_29 + t * 0.044_81)) - t);
 
   for (let j = 0; j < 2; j++) {
     const err = erfc(r) - xx;
     // oxlint-disable-next-line no-loss-of-precision
-    r += err / (1.12837916709551257 * Math.exp(-(r * r)) - r * err);
+    r += err / (1.128_379_167_095_512_57 * Math.exp(-(r * r)) - r * err);
   }
 
   return x < 1 ? r : -r;
