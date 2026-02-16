@@ -52,9 +52,6 @@ export class Gaussian {
   public mean: number;
   public variance: number;
   readonly standardDeviation: number;
-  private readonly _precision: number;
-  private readonly _sqrtTwoSd: number;
-  private readonly _pdfDenom: number;
 
   constructor(mean: number, variance: number) {
     this.mean = mean;
@@ -65,9 +62,6 @@ export class Gaussian {
     }
 
     this.standardDeviation = Math.sqrt(variance);
-    this._precision = 1 / variance;
-    this._sqrtTwoSd = this.standardDeviation * Math.sqrt(2);
-    this._pdfDenom = this.standardDeviation * Math.sqrt(2 * Math.PI);
   }
 
   /**
@@ -75,7 +69,9 @@ export class Gaussian {
    * of a random variable taking on the value _x_
    */
   pdf(x: number): number {
-    return Math.exp(-((x - this.mean) ** 2) / (2 * this.variance)) / this._pdfDenom;
+    const m = this.standardDeviation * Math.sqrt(2 * Math.PI);
+    const e = Math.exp(-((x - this.mean) ** 2) / (2 * this.variance));
+    return e / m;
   }
 
   /**
@@ -83,14 +79,14 @@ export class Gaussian {
    * random variable falling in the interval (−∞, _x_]
    */
   cdf(x: number): number {
-    return 0.5 * erfc(-(x - this.mean) / this._sqrtTwoSd);
+    return 0.5 * erfc(-(x - this.mean) / (this.standardDeviation * Math.sqrt(2)));
   }
 
   /**
    * percent point function, the inverse of _cdf_
    */
   ppf(x: number): number {
-    return this.mean - this._sqrtTwoSd * ierfc(2 * x);
+    return this.mean - this.standardDeviation * Math.sqrt(2) * ierfc(2 * x);
   }
 
   /**
@@ -103,10 +99,11 @@ export class Gaussian {
       return this.scale(d);
     }
 
+    const precision = 1 / this.variance;
     const dprecision = 1 / d.variance;
     return this.fromPrecisionMean(
-      this._precision + dprecision,
-      this._precision * this.mean + dprecision * d.mean,
+      precision + dprecision,
+      precision * this.mean + dprecision * d.mean,
     );
   }
 
@@ -119,10 +116,11 @@ export class Gaussian {
       return this.scale(1 / d);
     }
 
+    const precision = 1 / this.variance;
     const dprecision = 1 / d.variance;
     return this.fromPrecisionMean(
-      this._precision - dprecision,
-      this._precision * this.mean - dprecision * d.mean,
+      precision - dprecision,
+      precision * this.mean - dprecision * d.mean,
     );
   }
 
